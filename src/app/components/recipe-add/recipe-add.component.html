@@ -1,0 +1,13 @@
+<div class="col-xs-5">
+    <strong>New Recipe</strong>
+    <div class="row col-xs-12">
+        <span>Name:</span>
+        <input type="text" class='form-control' [(ngModel)]='this.recipeName'>
+        <span>Description:</span>
+        <input type="text" class='form-control' [(ngModel)]='this.recipeDescription'>
+        <button
+            class="btn btn-success"
+            (click)="addNewRecipe(this.recipeName, this.recipeDescription)">Create
+        </button>
+    </div>
+</div>

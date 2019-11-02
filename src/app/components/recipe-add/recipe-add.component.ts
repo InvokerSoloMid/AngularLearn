@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../../models/recipe.model';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-add',
@@ -11,7 +12,12 @@ export class RecipeAddComponent implements OnInit {
   recipeName: string;
   recipeDescription: string;
   recipeUrl: string;
-  constructor() { }
+  recipeForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+  });
+  constructor() { 
+  }
 
   ngOnInit() {
   }
@@ -24,5 +30,13 @@ export class RecipeAddComponent implements OnInit {
     this.newRecipe.emit(returnedRecipe);
     this.recipeName = this.recipeDescription = this.recipeUrl = null;
   }
+
+  update() {
+    this.recipeName = this.recipeForm.value.name;
+    this.recipeDescription = this.recipeForm.value.description;
+  }
+
+  get name() { return this.recipeForm.get('name'); }
+  get description() { return this.recipeForm.get('description'); }
 
 }

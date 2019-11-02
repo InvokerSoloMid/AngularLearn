@@ -2,12 +2,18 @@
     <strong>New Recipe</strong>
     <div class="row col-xs-12">
         <span>Name:</span>
-        <input type="text" class='form-control' [(ngModel)]='this.recipeName'>
-        <span>Description:</span>
-        <input type="text" class='form-control' [(ngModel)]='this.recipeDescription'>
-        <button
-            class="btn btn-success"
-            (click)="addNewRecipe(this.recipeName, this.recipeDescription)">Create
-        </button>
+        <fieldset class="form-group" [formGroup]="recipeForm">
+            <!-- <input type="text" class='form-control' [(ngModel)]='this.recipeName'> -->
+            <input formControlName="name" (change)="update()" class="form-control">
+            <div *ngIf="name.invalid && name.touched">
+                <div class="alert alert-danger">Recipe name is required</div>
+            </div>
+            <span>Description:</span>
+            <input formControlName="description" (change)="update()" class="form-control">
+            <div *ngIf="description.invalid && description.touched">
+                <div class="alert alert-danger">Description is required</div>
+            </div>
+            <button class="btn btn-success" (click)="addNewRecipe(recipeName, recipeDescription)">Create</button>
+        </fieldset>
     </div>
 </div>

@@ -1,15 +1,15 @@
+<app-header *ngIf="!isNested"></app-header>
 <div class="row">
     <div class="col-xs-5">
         <div class="col-xs-12">
-            <strong>Recipes List:</strong>
+            <strong *ngIf="recipes.length">Recipes List:</strong>
             <a href='#' *ngFor="let recipe of recipes" class="list-group-item clearfix">
                 <div class="pull-left">
                     <p>{{recipe.name}}</p>
                     <span>{{recipe.description}}</span>
                 </div>
                 <div class="pull-right">
-                    <img [src]="recipe.imageUrl" alt="" style="max-width: 50px;"
-                        class="img-responsive">
+                    <img [src]="recipe.imageUrl" alt="" style="max-width: 50px;" class="img-responsive">
                 </div>
             </a>
         </div>

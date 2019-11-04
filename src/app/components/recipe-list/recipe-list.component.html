@@ -3,7 +3,7 @@
     <div class="col-xs-5">
         <div class="col-xs-12">
             <strong *ngIf="recipes.length">Recipes List:</strong>
-            <a href='#' *ngFor="let recipe of recipes" class="list-group-item clearfix">
+            <a href='#' *ngFor="let recipe of recipes" class="list-group-item clearfix" (click)="setSelectedRecipe(recipe)">
                 <div class="pull-left">
                     <p>{{recipe.name}}</p>
                     <span>{{recipe.description}}</span>
@@ -14,4 +14,7 @@
             </a>
         </div>
     </div>
+</div>
+<div *ngIf="fetchRequest">
+    fetchRequest::{{fetchRequest.nat}}
 </div>

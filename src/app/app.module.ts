@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeAddComponent } from './components/recipe-add/recipe-add.component';
+import { RecipeDisplayComponent } from './components/recipe-display/recipe-display.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { RecipeAddComponent } from './components/recipe-add/recipe-add.component
     HomeComponent,
     RecipeListComponent,
     RecipeAddComponent,
+    RecipeDisplayComponent,
   ],
   imports: [
     BrowserModule,

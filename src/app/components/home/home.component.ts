@@ -10,6 +10,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 export class HomeComponent implements OnInit {
   homeColor = false;
   recipes: Recipe[] = [];
+  selectedRecipe: Recipe;
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +19,11 @@ export class HomeComponent implements OnInit {
   addNewRecipe(value) {
     console.log('addNewRecipe Invoked!');
     this.recipes.push(value);
+  }
+
+  setSelectedRecipe(recipe) {
+    console.log('recipe::', recipe);
+    this.selectedRecipe = recipe;
   }
 
 }

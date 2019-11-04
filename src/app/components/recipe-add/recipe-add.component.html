@@ -4,7 +4,7 @@
         <span>Name:</span>
         <fieldset class="form-group" [formGroup]="recipeForm">
             <!-- <input type="text" class='form-control' [(ngModel)]='this.recipeName'> -->
-            <input formControlName="name" (change)="update()" class="form-control">
+            <input formControlName="name" (change)="update()" class="form-control" name="suka">
             <div *ngIf="name.invalid && name.touched">
                 <div class="alert alert-danger">Recipe name is required</div>
             </div>

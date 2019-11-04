@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../../models/recipe.model';
+import { RequestService } from '../../services/request.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,15 +8,24 @@ import { Recipe } from '../../models/recipe.model';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
-  @Input() recipes: Recipe[] = [
-    // new Recipe('recipeName', 'new Recipe',
-    // 'https://www.kustompcs.co.uk/images/thumbnails/465/465/detailed/21/D323-DOTA-2-logo_eum6-0n.jpg'),
-  ];
+  @Input() recipes: Recipe[] = [];
   @Input() isNested: boolean;
+  @Output() selectedRecipe = new EventEmitter();
+  fetchRequest: any;
 
-  constructor() { }
+  constructor(private request: RequestService) { }
 
   ngOnInit() {
+  }
+
+  setSelectedRecipe(recipe) {
+    console.log('request::', this.request);
+    console.log('recipe-list select::', recipe);
+    this.selectedRecipe.emit(recipe);
+    this.request.getRandomUser().subscribe(response => {
+      this.fetchRequest = response[0];
+      console.log('fetchRequest::', this.fetchRequest);
+    });
   }
 
 }

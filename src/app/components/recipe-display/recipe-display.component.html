@@ -1,0 +1,10 @@
+<div class="col-xs-5" *ngIf="recipeToDisplay">
+    <p>Selected recipe:</p>
+    <div class="pull-left">
+        <p>{{recipeToDisplay.name}}</p>
+        <span>{{recipeToDisplay.description}}</span>
+    </div>
+    <div class="pull-right">
+        <img [src]="recipeToDisplay.imageUrl" alt="" style="max-width: 50px;" class="img-responsive">
+    </div>
+</div>

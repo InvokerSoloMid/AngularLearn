@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { isNumber } from 'util';
 import { Recipe } from 'src/app/models/recipe.model';
+import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   homeColor = false;
   recipes: Recipe[] = [];
   selectedRecipe: Recipe;
-  constructor() { }
+  constructor(private recipesService: RecipesService,) { }
 
   ngOnInit() {
   }

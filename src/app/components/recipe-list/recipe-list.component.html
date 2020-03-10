@@ -8,10 +8,15 @@
                     <p>{{recipe.name}}</p>
                     <span>{{recipe.description}}</span>
                 </div>
+                <div class="pull-right" (click)="deleteRecipe(recipe)">
+                    <i class="fa fa-window-close" aria-hidden="true">Delete</i>
+                </div>
                 <div class="pull-right">
                     <img [src]="recipe.imageUrl" alt="" style="max-width: 50px;" class="img-responsive">
                 </div>
             </a>
+            <div>
+            </div>
         </div>
     </div>
 </div>

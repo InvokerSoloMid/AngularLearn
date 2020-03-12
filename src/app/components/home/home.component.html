@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div class="col-xs-12">
-    <app-recipe-add (newRecipe)="addNewRecipe($event)"></app-recipe-add>
-    <app-recipe-list [recipes]="recipesService.RecipesList" [isNested]="true" (selectedRecipe)="setSelectedRecipe($event)"></app-recipe-list>
-    <app-recipe-display [recipeToDisplay]="selectedRecipe"></app-recipe-display>
+  <app-recipe-add (newRecipe)="addNewRecipe($event)"></app-recipe-add>
+  <app-recipe-list [recipes]="recipesService.RecipesList" [isNested]="true"
+    (selectedRecipe)="setSelectedRecipe($event)"></app-recipe-list>
+  <app-recipe-display [recipeToDisplay]="selectedRecipe"></app-recipe-display>
 </div>

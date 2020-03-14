@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeAddComponent } from './components/recipe-add/recipe-add.component';
 import { RecipeDisplayComponent } from './components/recipe-display/recipe-display.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { RecipeDisplayComponent } from './components/recipe-display/recipe-displ
     RecipeDisplayComponent,
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

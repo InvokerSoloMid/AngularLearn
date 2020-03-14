@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   homeColor = false;
   recipes: Recipe[] = [];
   selectedRecipe: Recipe;
-  constructor(private recipesService: RecipesService) { }
+  constructor(public recipesService: RecipesService) { }
 
   ngOnInit() {
   }

@@ -22,7 +22,7 @@ export class RecipeAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  addNewRecipe(name, description,url) {
+  addNewRecipe(name, description, url?) {
     const returnedRecipe = new Recipe(
       name || 'defaultName',
       description || 'defaultDescription',
